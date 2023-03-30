@@ -31,7 +31,7 @@ def request_cve_list(year, month):
         'pubEndDate': '2022-02-28T23:59:59.999',
     }
     
-    # json_filename = f'vulns_{year}_{month}.json'
+    json_filename = f'vulns_{year}_{month}.json'
     if not os.path.isfile(json_filename):
         json_response = requests.get(url=base_url, params=params)
 
@@ -39,7 +39,7 @@ def request_cve_list(year, month):
 
     #json_respone = requests.get(url=full_url,params=params)
 
-    pass
+        pass
 
 
 def write_CVEs_to_csv(year, month):
