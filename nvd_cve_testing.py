@@ -6,10 +6,10 @@ if __name__ =="__main__":
     month = 2
     response = request_cve_list(year, month)
 
-    json_response = response.json()
+    #json_response = response.json()
 
-    print(response)
-    print(type(json_response))
-    print(json_response)
+    print(len(response))
+    #print(type(json_response))
+    #print(json_response)
 
     
