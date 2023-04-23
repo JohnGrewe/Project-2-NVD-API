@@ -50,7 +50,7 @@ def request_cve_list(year, month):
         'noRejected' : None
     }
     
-    params = '&'.join([k if v is None else f"{k}={v}" in params.items()])
+    params = '&'.join([k if v is None else f"{k}={v}" for k, v in params.items()])
     #print (params)
 
     json_filename = f'vulns_{year}_{month}.json'
@@ -161,6 +161,22 @@ def plot_CVEs(year,month,topnum=40):
 
 def plot_CVEs(year,month,topnum=40):
     '''Task 2L read that out and do a plot'''
+    filename = f"cve-{year}-{month:02d}.csv"
+    with open(filename, 'r', newline='') as csv_file:
+        reader = csv.reader(csv_file)
+        csv_rows = []
+        for row in reader[1:]:
+            csv_rows.append(row[16], [row[0], row[5], row[18]])
+        csv_rows.sort(reverse=True)
+
+        cveids = []
+        scores = []
+
+
+       # for row in csv_rows:
+         #   cveids.append(row[1])   
+# new list with 4 columns with sublists of those columns for the plots
+
     pass
 
 if __name__ =="__main__":
